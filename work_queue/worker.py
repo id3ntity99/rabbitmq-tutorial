@@ -23,6 +23,7 @@ class Consumer:
         ch.basic_ack(delivery_tag=method.delivery_tag)
 
     def consume(self):
+        self.channel.basic_qos(prefetch_count=1)
         self.channel.basic_consume(
             queue="task_queue", on_message_callback=self.callback
         )
