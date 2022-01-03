@@ -1,0 +1,33 @@
+OS: Ubuntu 20.04 LTS
+
+1. Add repository
+$ sudo apt list -- installed rabbitmq-server
+
+2. Install RabbitMQ
+$ sudo apt install rabbitmq-server
+
+3. Check whether RabbitMQ is running
+$ systemctl status rabbitma-server
+
+4. Enable Management UI Plugin
+$ sudo rabbitmq-plugins enable rabbitmq_management
+
+5. Search user list
+$ sudo rabbitmqctl list_users
+
+6. Add admin user
+$ sudo rabbitmqctl add_user USER_NAME 'PASSWD'
+
+7. Authorize user as administrator
+$ sudo rabbitmqctl set_user_tags USER_NAME administrator
+
+* How to change password?
+$ sudo rabbitmqctl change_password USER_NAME "PASSWD"
+
+* How to start server?
+=> Fore-ground running: $ rabbitmq-server
+=> Back-ground running: $ rabbitmqctl start
+
+* How to stop server?
+=> Fore-ground running: $ <C-c>
+=> Back-ground running: $ rabbitmqctl stop
