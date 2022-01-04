@@ -2,8 +2,6 @@
 
 ## Introduction to project
 
----
-
 - Previous tutorial project, Work Queue, is that each task is delivered to exactly one worker.
 
 - In this tutorial project, we'll deliver one message to multiple consuers using 'publish/subscribe pattern'.
@@ -16,13 +14,9 @@
 
 ## Source
 
----
-
 - Publish/Subscribe Tutorial: https://www.rabbitmq.com/tutorials/tutorial-three-python.html
 
 ## Note
-
----
 
 ### Exchanges
 
@@ -39,3 +33,8 @@
 - The fanout exchange is proper to broadcast all the messages to all of the queues that bound to the exchange.
 
 - Also, fanout exchange ignores routing keys, thus, we don't need to provide routing key to the exchange as an attribute.
+
+### Temporary Queues
+
+- 몇 개의 큐가 exchange에 바인딩 될 지 모르므로 컨슈머 측에서 무작위 이름을 가진 큐를 직접 생성.
+- exclusive를 True로 하지 않으면 컨슈머가 실행될때 생성된 큐가 컨슈머 종료 후에도 남아있음. exclusive를 True로 할 경우 컨슈머가 실행될 때 큐가 생성되고 종료할 때 큐도 같이 제거됨.
