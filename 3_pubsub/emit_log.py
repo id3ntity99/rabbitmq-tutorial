@@ -1,6 +1,6 @@
 import pika
 import sys
-import os 
+import os
 
 
 class Producer:
@@ -27,11 +27,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        print("Keyboard Interrupted")
-        try:
-            sys.exit(0)
-        except SystemExit:
-            os._exit(0)
+    main()
